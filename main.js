@@ -180,7 +180,11 @@ const sendMessage = async (params) => {
             "note_ch": {
                 "value": params.ch,
                 "color": getColor()
-            }
+            },
+            "menses_day": {
+                "value": params.mensesDateDiff,
+                "color": getColor()
+            },
         }
     }
 
@@ -231,6 +235,8 @@ const main = async () => {
     const loveDateDiff = dayjs().diff(dayjs(config.loveDate), 'day')
     // 获取结婚的日期差
     const marryDateDiff = dayjs().diff(dayjs(config.marryDate), 'day')
+    // 获取姨妈的日期差
+    const mensesDateDiff = dayjs().diff(dayjs(config.mensesDate), 'day')
     // 获取生日信息
     const birthdayList = getBirthdayMessage()
     // 公众号推送消息
@@ -247,7 +253,8 @@ const main = async () => {
             en,
             loveDateDiff,
             marryDateDiff,
-            birthdayList
+            birthdayList,
+            mensesDateDiff
         })
     })
 
