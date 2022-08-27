@@ -236,7 +236,7 @@ const main = async () => {
     // 获取结婚的日期差
     const marryDateDiff = dayjs().diff(dayjs(config.marryDate), 'day')
     // 获取姨妈的日期差
-    const mensesDateDiff = dayjs().diff('day', dayjs(config.mensesDate))
+    const mensesDateDiff = - dayjs().diff(dayjs(config.mensesDate), 'day')
     // 获取生日信息
     const birthdayList = getBirthdayMessage()
     // 公众号推送消息
